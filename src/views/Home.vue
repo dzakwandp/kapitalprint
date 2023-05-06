@@ -1,4 +1,4 @@
-<template @scroll="onScroll()">
+<template>
   <div class="grid md:grid grid-cols-2 h-screen justify-center transform overflow-y-clip">
     <!-- left side main landing -->
     <div class="hidden md:grid px-4 h-full place-content-center mt-16">
@@ -146,15 +146,6 @@
       </div>
     </div>
   </div>
-  <!-- button to top -->
-  <button ref="toTop"
-    class="fixed bottom-4 right-4 bg-aqua hover:bg-soft-brown hover:text-aqua text-soft-brown font-bold py-2 px-4 rounded"
-    :class="{ 'hidden': shouldHide }" @click="scrollToTop()">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-      class="w-6 h-6">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5" />
-    </svg>
-  </button>
 </template>
 
 <script>
@@ -164,7 +155,6 @@ export default {
   components: { Carousel },
   data() {
     return {
-      shouldHide: true,
       testiImage: [
         "https://kapitalprinting.com/wp-content/uploads/2022/05/whatsapp-image-2020-10-06-at-15.12.011.webp",
         "https://kapitalprinting.com/wp-content/uploads/2022/05/whatsapp-image-2020-10-06-at-15.12.01.webp",
@@ -182,31 +172,7 @@ export default {
     scrollToSecond() {
       this.$refs["second"].scrollIntoView({ behavior: "smooth" });
     },
-    scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    },
-    onScroll(e) {
-      let scrollYPosition
-      scrollYPosition = window.top.scrollY
-      if (scrollYPosition > 500) {
-        this.shouldHide = false
-      }
-      if (scrollYPosition < 200) {
-        this.shouldHide = true
-      }
-      // console.log('Scroll Position', scrollYPosition)
-      // e.target.documentElement.scrollTop
-    }
   },
-  mounted() {
-    window.addEventListener("scroll", this.onScroll)
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll)
-  }
 };
 </script>
 
