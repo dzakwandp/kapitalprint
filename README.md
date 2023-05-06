@@ -1,2 +1,2 @@
 # kapitalprint
-A Fullstack projects for Kapital Printing website
+A frontend projects for Kapital Printing website
