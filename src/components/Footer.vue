@@ -8,14 +8,14 @@
                 <div class="grid grid-cols-2 md:grid-cols-2 gap-4">
                     <div>
                         <h3 class="text-lg font-bold mb-4">About Us</h3>
-                        <p class="text-sm">Kapital Printing berfokus pada bidang percetakan digital baik design maupun
+                        <p class="md:text-sm text-xs">Kapital Printing berfokus pada bidang percetakan digital baik design maupun
                             produk.</p>
                     </div>
                     <div>
                         <h3 class="text-lg font-bold mb-4">Contact Us</h3>
-                        <p class="text-sm">Ngabean Kulon RT01/RW34, Sinduharjo, Ngaglik, Sleman 55581</p>
-                        <a class="text-sm" href="mailto:info@kapitalprinting.com">info@kapitalprinting.com</a><br>
-                        <a class="text-sm" href="https://wa.me/6289507699099" target="_blank">+6289507699099</a>
+                        <p class="md:text-sm text-xs">Ngabean Kulon RT01/RW34, Sinduharjo, Ngaglik, Sleman 55581</p>
+                        <a class="md:text-sm text-xs" href="mailto:info@kapitalprinting.com">info@kapitalprinting.com</a><br>
+                        <a class="md:text-sm text-xs" href="https://wa.me/6289507699099" target="_blank">+6289507699099</a>
                     </div>
                 </div>
             </div>
