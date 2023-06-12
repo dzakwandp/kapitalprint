@@ -4,6 +4,7 @@ import Home from "@/views/Home.vue"
 import Product from "@/views/Product.vue"
 import Blog from "@/views/Blog.vue"
 import Contact from "@/views/Contact.vue"
+import SinglePost from "@/views/SinglePost.vue"
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
         path: 'blog',
         name: 'blog',
         component: Blog
+      },
+      {
+        path: 'post/:id',
+        name: 'post',
+        component: SinglePost
       },
       {
         path: 'contact',

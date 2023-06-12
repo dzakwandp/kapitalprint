@@ -1,9 +1,9 @@
 <template>
   <!-- desktop product -->
-  <div class="hidden md:grid grid-rows-2 h-fit">
+  <div class="grid h-fit">
     <!-- title -->
     <div
-      class="hidden md:grid text-soft-brown justify-center items-start font-body font-medium text-4xl text-center mt-24">
+      class="grid text-soft-brown justify-center items-start font-body font-medium text-4xl text-center mt-24 mb-8">
       Our Product
     </div>
     <!-- items -->
@@ -11,31 +11,11 @@
       Please wait...
     </div>
     <div v-else>
-      <div class="hidden md:grid grid-cols-3 justify-items-center -mt-[50px]">
+      <div class="grid grid-cols-1 md:grid-cols-3 justify-items-center">
         <div class="mb-12" v-for="(item, index) in items" :key="index">
           <img :src="item.image" class="object-contain h-48 w-96" alt="item.title">
-          <div class="grid md:grid text-soft-brown font-body font-medium text-l text-center">{{ item.title }}</div>
-          <div class="grid md:grid text-soft-brown font-body font-medium text-xs text-center">{{ item.desc }}</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- mobile product -->
-  <div class="md:hidden flex-col">
-    <!-- mobile title -->
-    <div class="md:hidden grid text-soft-brown justify-center font-body font-medium text-2xl text-center mt-24">
-      Our Product
-    </div>
-    <!-- mobile items -->
-    <div v-if="loading" class="animate-pulse text-soft-brown text-center font-body text-lg mt-10">
-      Please wait...
-    </div>
-    <div v-else>
-      <div class="md:hidden grid grid-cols-1 justify-]items-center mt-5">
-        <div class="mb-12" v-for="(item, index) in items" :key="index">
-          <img :src="item.image" class="object-contain h-48 w-96" alt="item.title">
-          <div class="grid md:grid text-soft-brown font-body font-medium text-l text-center">{{ item.title }}</div>
-          <div class="grid md:grid text-soft-brown font-body font-medium text-xs text-center">{{ item.desc }}</div>
+          <div class="grid text-soft-brown font-body font-medium text-l text-center">{{ item.title }}</div>
+          <div v-html="item.desc" class="grid text-soft-brown font-body font-medium text-xs text-left ml-8 wrapper"></div>
         </div>
       </div>
     </div>
@@ -59,10 +39,14 @@ export default {
       this.loading = false
     } catch (error) {
       this.error = error.message
-      this.loading - false
+      this.loading = false
     }
   }
 }
 </script>
 
-<style></style>
+<style>
+.wrapper ul{
+  @apply list-disc
+}
+</style>
