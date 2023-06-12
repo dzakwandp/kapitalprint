@@ -7,7 +7,7 @@
       Our Product
     </div>
     <!-- items -->
-    <div v-if="loading" class="animate-pulse text-soft-brown text-center font-body text-lg mt-10">
+    <div v-if="loading" class="animate-pulse text-soft-brown text-center font-body text-lg mt-10 h-screen">
       Please wait...
     </div>
     <div v-else>
